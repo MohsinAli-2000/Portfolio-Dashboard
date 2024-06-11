@@ -20,7 +20,7 @@ import {
   updateProject,
 } from "@/store/slices/projectSlice";
 import { Button } from "@/components/ui/button";
-const APIBaseURL = "https://my-portfolio-backend-nilc.onrender.com";
+const APIBaseURL = "https://my-portfolio-backend-rose.vercel.app";
 const UpdateProject = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");

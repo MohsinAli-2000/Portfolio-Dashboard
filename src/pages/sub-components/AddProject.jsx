@@ -21,8 +21,8 @@ import SpecialLoadingButton from "./SpecialLoadingButton";
 const AddProject = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [projectBanner, setProjectBanner] = useState(null);
-  const [projectBannerPreview, setProjectBannerPreview] = useState("");
+  const [projectThumbnail, setprojectThumbnail] = useState(null);
+  const [projectThumbnailPreview, setprojectThumbnailPreview] = useState("");
   const [githubRepoLink, setGithubRepoLink] = useState("");
   const [projectLink, setProjectLink] = useState("");
   const [technologies, setTechnologies] = useState("");
@@ -34,8 +34,8 @@ const AddProject = () => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
-      setProjectBannerPreview(reader.result);
-      setProjectBanner(file);
+      setprojectThumbnailPreview(reader.result);
+      setprojectThumbnail(file);
     };
   };
 
@@ -52,7 +52,7 @@ const AddProject = () => {
     formData.append("technologies", technologies);
     formData.append("stack", stack);
     formData.append("deployed", deployed);
-    formData.append("projectThumbnail", projectBanner);
+    formData.append("projectThumbnail", projectThumbnail);
     dispatch(addNewProject(formData));
   };
 
@@ -222,12 +222,12 @@ const AddProject = () => {
                   </label>
                   <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                     <div className="text-center">
-                      {projectBannerPreview ? (
+                      {projectThumbnailPreview ? (
                         <img
                           className="mx-auto h-[250px] w-full text-gray-300"
                           viewBox="0 0 24 24"
                           src={
-                            projectBannerPreview && `${projectBannerPreview}`
+                            projectThumbnailPreview && `${projectThumbnailPreview}`
                           }
                         />
                       ) : (

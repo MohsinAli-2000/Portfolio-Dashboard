@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const APIBaseURL = "https://my-portfolio-backend-nilc.onrender.com";
+const APIBaseURL = "https://my-portfolio-backend-rose.vercel.app";
 const userSlice = createSlice({
   name: "user",
   initialState: {
